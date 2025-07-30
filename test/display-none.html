@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display None Test - Autofill Security Demo</title>
+    <link rel="stylesheet" href="../shared/style.css" />
+    <style>
+      .hidden-field {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🚫 Display None Test</h1>
+        <p>Testing autofill capture with display: none</p>
+      </div>
+
+      <div class="content">
+        <div class="technique-info">
+          <h3>Technique Description</h3>
+          <p>
+            This test demonstrates how a malicious website might use
+            <code>display: none</code> to hide an input field that captures
+            autofill data. The hidden field is completely removed from the
+            document flow and invisible to users, but browsers may still
+            autofill it.
+          </p>
+        </div>
+
+        <div class="demo-company">
+          <h2>SecureBank Login</h2>
+          <p>Please enter your credentials to access your account</p>
+        </div>
+
+        <form class="login-form" id="loginForm">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              autocomplete="current-password"
+            />
+          </div>
+
+          <!-- Hidden credit card fields -->
+          <input
+            type="text"
+            name="cc-number"
+            class="hidden-field"
+            autocomplete="cc-number"
+          />
+          <input
+            type="text"
+            name="cc-exp"
+            class="hidden-field"
+            autocomplete="cc-exp"
+          />
+          <input
+            type="text"
+            name="cc-csc"
+            class="hidden-field"
+            autocomplete="cc-csc"
+          />
+
+          <!-- Hidden identity fields -->
+          <input
+            type="text"
+            name="full-name"
+            class="hidden-field"
+            autocomplete="name"
+          />
+          <input
+            type="text"
+            name="ssn"
+            class="hidden-field"
+            autocomplete="off"
+          />
+          <input
+            type="tel"
+            name="phone"
+            class="hidden-field"
+            autocomplete="tel"
+          />
+          <input
+            type="text"
+            name="address"
+            class="hidden-field"
+            autocomplete="street-address"
+          />
+          <input
+            type="text"
+            name="postal-code"
+            class="hidden-field"
+            autocomplete="postal-code"
+          />
+
+          <button type="submit" class="submit-btn">Sign In Securely</button>
+        </form>
+
+        <a href="../index.html" class="back-link">← Back to Test Suite</a>
+      </div>
+    </div>
+    <script src="../shared/index.js"></script>
+  </body>
+</html>

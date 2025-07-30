@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autofill Security Demo - Test Suite</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🔐 Autofill Security Demo</h1>
+        <p>Educational demonstration of browser autofill vulnerabilities</p>
+      </div>
+
+      <div class="content">
+        <div class="warning">
+          <h3>⚠️ Educational Purpose Only</h3>
+          <p>
+            This demo is designed for security research, education, and testing
+            purposes. It demonstrates how malicious websites might attempt to
+            steal autofilled credentials using various CSS hiding techniques.
+          </p>
+        </div>
+
+        <h2 style="margin-bottom: 1rem; color: #1f2937">Test Cases</h2>
+        <p style="color: #64748b; margin-bottom: 2rem">
+          Click on any test case below to see how different CSS hiding
+          techniques can be used to capture autofill data. Each test includes
+          console logging and demonstrates the vulnerability.
+        </p>
+
+        <div class="test-grid">
+          <a href="./test/display-none.html" class="test-card">
+            <h3>Display None</h3>
+            <p>Hidden field using display: none CSS property</p>
+            <span class="technique">CSS Display</span>
+          </a>
+
+          <a href="./test/visibility-hidden.html" class="test-card">
+            <h3>Visibility Hidden</h3>
+            <p>Hidden field using visibility: hidden CSS property</p>
+            <span class="technique">CSS Visibility</span>
+          </a>
+
+          <a href="./test/visibility-collapse.html" class="test-card">
+            <h3>Visibility Collapse</h3>
+            <p>Hidden field using visibility: collapse CSS property</p>
+            <span class="technique">CSS Visibility</span>
+          </a>
+
+          <a href="./test/opacity-zero.html" class="test-card">
+            <h3>Opacity Zero</h3>
+            <p>Hidden field using opacity: 0 CSS property</p>
+            <span class="technique">CSS Opacity</span>
+          </a>
+
+          <a href="./test/z-index-overlay.html" class="test-card">
+            <h3>Z-Index Overlay</h3>
+            <p>Hidden field behind an overlay using z-index positioning</p>
+            <span class="technique">CSS Z-Index</span>
+          </a>
+
+          <a href="./test/zero-dimensions.html" class="test-card">
+            <h3>Zero Dimensions</h3>
+            <p>Hidden field using width: 0 and height: 0</p>
+            <span class="technique">CSS Sizing</span>
+          </a>
+
+          <a href="./test/off-screen.html" class="test-card">
+            <h3>Off Screen</h3>
+            <p>Hidden field positioned off-screen with left: -9999px</p>
+            <span class="technique">CSS Position</span>
+          </a>
+
+          <a href="./test/overflow-hidden.html" class="test-card">
+            <h3>Overflow Hidden</h3>
+            <p>Hidden field inside container with overflow: hidden</p>
+            <span class="technique">CSS Overflow</span>
+          </a>
+
+          <a href="./test/html-hidden.html" class="test-card">
+            <h3>HTML Hidden Attribute</h3>
+            <p>Hidden field using HTML hidden attribute</p>
+            <span class="technique">HTML Attribute</span>
+          </a>
+
+          <a href="./test/clip-hidden.html" class="test-card">
+            <h3>CSS Clip</h3>
+            <p>Hidden field using CSS clip property</p>
+            <span class="technique">CSS Clip</span>
+          </a>
+
+          <a href="./test/clip-path.html" class="test-card">
+            <h3>CSS Clip Path</h3>
+            <p>Hidden field using CSS clip-path property</p>
+            <span class="technique">CSS Clip Path</span>
+          </a>
+
+          <a href="./test/transform-scale.html" class="test-card">
+            <h3>Transform Scale</h3>
+            <p>Hidden field using transform: scale(0)</p>
+            <span class="technique">CSS Transform</span>
+          </a>
+
+          <a href="./test/font-size-zero.html" class="test-card">
+            <h3>Font Size Zero</h3>
+            <p>Hidden field using font-size: 0</p>
+            <span class="technique">CSS Typography</span>
+          </a>
+
+          <a href="./test/content-visibility.html" class="test-card">
+            <h3>Content Visibility</h3>
+            <p>Hidden field using content-visibility: hidden</p>
+            <span class="technique">CSS Content Visibility</span>
+          </a>
+
+          <a href="./test/tiny-size.html" class="test-card">
+            <h3>Tiny Size (1px)</h3>
+            <p>Hidden field using 1px dimensions</p>
+            <span class="technique">CSS Sizing</span>
+          </a>
+
+          <a href="./test/iframe-injection.html" class="test-card">
+            <h3>Iframe Injection</h3>
+            <p>Hidden field inside an invisible iframe</p>
+            <span class="technique">HTML Iframe</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>
+          &copy; 2025 Autofill Security Demo - For Educational Purposes Only
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

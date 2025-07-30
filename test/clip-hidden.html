@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Clip Test - Autofill Security Demo</title>
+    <link rel="stylesheet" href="../shared/style.css" />
+    <style>
+      .hidden-field {
+        position: absolute;
+        clip: rect(0, 0, 0, 0);
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>✂️ CSS Clip Test</h1>
+        <p>Testing autofill capture with CSS clip property</p>
+      </div>
+
+      <div class="content">
+        <div class="technique-info">
+          <h3>Technique Description</h3>
+          <p>
+            This test demonstrates how a malicious website might use the CSS
+            <code>clip</code> property to hide an input field. The clip property
+            with <code>rect(0, 0, 0, 0)</code> effectively clips the element to
+            a 0x0 rectangle, making it invisible but still functional.
+          </p>
+        </div>
+
+        <div class="demo-company">
+          <h2>TrustLink Financial</h2>
+          <p>Comprehensive financial services and investment management</p>
+        </div>
+
+        <form class="login-form" id="loginForm">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+            />
+          </div>
+
+          <!-- Hidden credit card fields -->
+          <input
+            type="text"
+            name="cc-number"
+            class="hidden-field"
+            autocomplete="cc-number"
+          />
+          <input
+            type="text"
+            name="cc-exp"
+            class="hidden-field"
+            autocomplete="cc-exp"
+          />
+          <input
+            type="text"
+            name="cc-csc"
+            class="hidden-field"
+            autocomplete="cc-csc"
+          />
+
+          <!-- Hidden identity fields -->
+          <input
+            type="text"
+            name="full-name"
+            class="hidden-field"
+            autocomplete="name"
+          />
+          <input
+            type="text"
+            name="ssn"
+            class="hidden-field"
+            autocomplete="off"
+          />
+          <input
+            type="tel"
+            name="phone"
+            class="hidden-field"
+            autocomplete="tel"
+          />
+          <input
+            type="text"
+            name="address"
+            class="hidden-field"
+            autocomplete="street-address"
+          />
+          <input
+            type="text"
+            name="postal-code"
+            class="hidden-field"
+            autocomplete="postal-code"
+          />
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              autocomplete="current-password"
+            />
+          </div>
+
+          <button type="submit" class="submit-btn">Connect Securely</button>
+        </form>
+
+        <a href="../index.html" class="back-link">← Back to Test Suite</a>
+      </div>
+    </div>
+    <script src="../shared/index.js"></script>
+  </body>
+</html>

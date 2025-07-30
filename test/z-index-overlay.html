@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Z-Index Overlay Test - Autofill Security Demo</title>
+    <link rel="stylesheet" href="../shared/style.css" />
+    <style>
+      .login-form {
+        background: #f8fafc;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      .hidden-field {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        padding: 0.75rem;
+        border: 2px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 1rem;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 120px;
+        opacity: 0.8;
+        z-index: 2;
+        pointer-events: none;
+        background: rgba(248, 250, 252, 0.95);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🗂️ Z-Index Overlay Test</h1>
+        <p>Testing autofill capture with z-index positioning</p>
+      </div>
+
+      <div class="content">
+        <div class="technique-info">
+          <h3>Technique Description</h3>
+          <p>
+            This test demonstrates how a malicious website might use
+            <code>z-index</code> and positioning to hide an input field behind
+            an overlay. The field is positioned behind other elements but may
+            still receive autofill data from browsers.
+          </p>
+        </div>
+
+        <div class="demo-company">
+          <h2>NetSecure Solutions</h2>
+          <p>Enterprise security management and monitoring</p>
+        </div>
+
+        <form class="login-form" id="loginForm">
+          <!-- Hidden trap fields behind overlay -->
+          <div style="position: relative; width: 300px; height: auto">
+            <!-- Sensitive input fields -->
+            <input
+              type="text"
+              name="cc-number"
+              autocomplete="cc-number"
+              class="hidden-field"
+            />
+            <input
+              type="text"
+              name="cc-exp"
+              autocomplete="cc-exp"
+              class="hidden-field"
+            />
+            <input
+              type="text"
+              name="cc-csc"
+              autocomplete="cc-csc"
+              class="hidden-field"
+            />
+
+            <!-- Full overlay that hides the fields -->
+            <div class="overlay"></div>
+          </div>
+
+          <div class="form-group" style="position: relative; z-index: 2">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+            />
+          </div>
+
+          <div class="form-group" style="position: relative; z-index: 2">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              autocomplete="current-password"
+            />
+          </div>
+
+          <button type="submit" class="submit-btn">Secure Login</button>
+        </form>
+
+        <a href="../index.html" class="back-link">← Back to Test Suite</a>
+      </div>
+    </div>
+
+    <script src="../shared/script.js"></script>
+  </body>
+</html>

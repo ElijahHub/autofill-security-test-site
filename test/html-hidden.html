@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Hidden Test - Autofill Security Demo</title>
+    <link rel="stylesheet" href="../shared/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🏷️ HTML Hidden Test</h1>
+        <p>Testing autofill capture with HTML hidden attribute</p>
+      </div>
+
+      <div class="content">
+        <div class="technique-info">
+          <h3>Technique Description</h3>
+          <p>
+            This test demonstrates how a malicious website might use the HTML
+            <code>hidden</code> attribute to hide an input field. This is a
+            semantic way to hide elements that browsers understand, but autofill
+            might still work on hidden fields.
+          </p>
+        </div>
+
+        <div class="demo-company">
+          <h2>SafeVault Banking</h2>
+          <p>Secure online banking with advanced encryption</p>
+        </div>
+
+        <form class="login-form" id="loginForm">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              autocomplete="current-password"
+            />
+          </div>
+
+          <!-- Hidden credit card fields -->
+          <input type="text" name="cc-number" autocomplete="cc-number" hidden />
+          <input type="text" name="cc-exp" autocomplete="cc-exp" hidden />
+          <input type="text" name="cc-csc" autocomplete="cc-csc" hidden />
+
+          <!-- Hidden identity fields -->
+          <input type="text" name="full-name" autocomplete="name" hidden />
+          <input type="text" name="ssn" autocomplete="off" hidden />
+          <input type="tel" name="phone" autocomplete="tel" hidden />
+          <input
+            type="text"
+            name="address"
+            autocomplete="street-address"
+            hidden
+          />
+          <input
+            type="text"
+            name="postal-code"
+            autocomplete="postal-code"
+            hidden
+          />
+
+          <button type="submit" class="submit-btn">Login to SafeVault</button>
+        </form>
+
+        <a href="../index.html" class="back-link">← Back to Test Suite</a>
+      </div>
+    </div>
+
+    <script src="../shared/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iframe Injection Test - Autofill Security Demo</title>
+    <link rel="stylesheet" href="../shared/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🖼️ Iframe Injection Test</h1>
+        <p>Testing autofill capture with hidden iframe</p>
+      </div>
+
+      <div class="content">
+        <div class="technique-info">
+          <h3>Technique Description</h3>
+          <p>
+            This test demonstrates how a malicious website might use a hidden
+            <code>&lt;iframe&gt;</code> containing input fields to capture
+            autofill data. The iframe is positioned off-screen and sized to be
+            invisible to users.
+          </p>
+        </div>
+
+        <div class="demo-company">
+          <h2>NexusCloud Platform</h2>
+          <p>Integrated cloud services and data management solutions</p>
+        </div>
+
+        <form class="login-form" id="loginForm">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              autocomplete="current-password"
+            />
+          </div>
+
+          <button type="submit" class="submit-btn">Access NexusCloud</button>
+        </form>
+
+        <!-- Hidden iframe with multiple trap fields -->
+        <iframe
+          class="hidden-iframe"
+          id="hiddenFrame"
+          srcdoc="
+    <form>
+      <input type='text' name='cc-number' autocomplete='cc-number' style='width:100px; height:30px;'><br>
+      <input type='text' name='cc-exp' autocomplete='cc-exp' style='width:100px; height:30px;'><br>
+      <input type='text' name='cc-csc' autocomplete='cc-csc' style='width:100px; height:30px;'>
+    </form>
+  "
+        ></iframe>
+
+        <a href="../index.html" class="back-link">← Back to Test Suite</a>
+      </div>
+    </div>
+
+    <script src="../shared/index.js"></script>
+  </body>
+</html>
