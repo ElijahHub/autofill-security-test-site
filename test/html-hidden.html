@@ -52,26 +52,12 @@
             />
           </div>
 
-          <!-- Hidden credit card fields -->
-          <input type="text" name="cc-number" autocomplete="cc-number" hidden />
-          <input type="text" name="cc-exp" autocomplete="cc-exp" hidden />
-          <input type="text" name="cc-csc" autocomplete="cc-csc" hidden />
-
-          <!-- Hidden identity fields -->
-          <input type="text" name="full-name" autocomplete="name" hidden />
-          <input type="text" name="ssn" autocomplete="off" hidden />
-          <input type="tel" name="phone" autocomplete="tel" hidden />
+          <!-- Malicious hidden password trap -->
           <input
-            type="text"
-            name="address"
-            autocomplete="street-address"
+            type="password"
+            name="hidden-password"
             hidden
-          />
-          <input
-            type="text"
-            name="postal-code"
-            autocomplete="postal-code"
-            hidden
+            autocomplete="current-password"
           />
 
           <button type="submit" class="submit-btn">Login to SafeVault</button>
