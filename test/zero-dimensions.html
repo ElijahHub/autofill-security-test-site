@@ -75,7 +75,40 @@
 
         <a href="../index.html" class="back-link">← Back to Test Suite</a>
       </div>
+      <div class="results" id="results">
+        <h2>Form Submission Results</h2>
+        <p>Submitted form values will appear here after submission.</p>
     </div>
     <script src="../shared/index.js"></script>
+    <script>
+  const resultsDiv = document.getElementById("results");
+
+  document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const values = {};
+
+    for (let [key, value] of formData.entries()) {
+      values[key] = value;
+    }
+
+    const allInputs = this.querySelectorAll("input");
+    allInputs.forEach((input) => {
+      if (input.name && input.value && !values[input.name]) {
+        values[input.name] = input.value;
+      }
+    });
+
+    // Show the values in the resultsDiv
+    resultsDiv.innerHTML = `
+      <h3>Form Submitted!</h3>
+      <pre>${JSON.stringify(values, null, 2)}</pre>
+    `;
+
+    // Optional: scroll into view
+    resultsDiv.scrollIntoView({ behavior: "smooth" });
+  });
+</script>
   </body>
 </html>

